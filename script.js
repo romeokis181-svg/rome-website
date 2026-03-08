@@ -1,70 +1,62 @@
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-text-align:center;
+function hello(){
+alert("Welcome to Rome's website 🚀");
 }
 
-nav{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:20px;
-background:#1e293b;
+let music = document.getElementById("music");
+
+function toggleMusic(){
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
 }
 
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
 }
 
-.hero{
-padding:80px 20px;
+let text = [
+"Web Developer",
+"Tech Learner",
+"Future Software Engineer"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+function type(){
+
+if(count === text.length){
+count = 0;
 }
 
-.hero img{
-width:160px;
-border-radius:50%;
-border:4px solid white;
+currentText = text[count];
+letter = currentText.slice(0, ++index);
+
+document.getElementById("typing").textContent = letter;
+
+if(letter.length === currentText.length){
+count++;
+index = 0;
 }
 
-button{
-padding:12px 20px;
-border:none;
-border-radius:8px;
-background:#22c55e;
-color:white;
-cursor:pointer;
-margin:10px;
+setTimeout(type,120);
 }
 
-.projects{
-padding:60px 20px;
+type();
+
+function toggleMode(){
+document.body.classList.toggle("light");
 }
 
-.project-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-padding:20px;
+particlesJS("particles-js",{
+
+"particles":{
+"number":{"value":80},
+"size":{"value":3},
+"move":{"speed":2},
+"line_linked":{"enable":true}
 }
 
-.project-card{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-transition:0.3s;
-}
-
-.project-card:hover{
-transform:translateY(-10px);
-}
-
-#particles-js{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-}
+});
