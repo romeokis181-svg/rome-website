@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <title>Rome | Developer</title>
@@ -59,6 +60,15 @@ padding:40px;
 border-radius:20px;
 width:320px;
 box-shadow:0 8px 30px rgba(0,0,0,0.3);
+animation:float 4s ease-in-out infinite;
+}
+
+/* floating animation */
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
 }
 
 /* image */
@@ -123,9 +133,11 @@ font-size:14px;
 
 <p>Future Software Developer from Takoradi 🇬🇭</p>
 
-<p>I’m learning web development and building cool tech projects.</p>
+<p>Learning web development and building tech projects.</p>
 
 <button onclick="hello()">Say Hi</button>
+
+<button onclick="toggleMusic()">Play / Pause Music 🎵</button>
 
 <div class="social">
 
@@ -139,16 +151,36 @@ font-size:14px;
 
 </div>
 
+<audio id="music">
+
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+
+</audio>
+
 <script>
 
 function hello(){
 alert("Welcome to Rome's website 🚀");
 }
 
+let music=document.getElementById("music");
+
+function toggleMusic(){
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+
+}
+
 </script>
 
 </body>
+
 </html>
+
 
 
 
