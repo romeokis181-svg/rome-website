@@ -19,15 +19,19 @@
 
 <nav>
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
+<h2 class="logo">Rome</h2>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+</div>
 
 <button onclick="toggleMode()">🌙</button>
 
 </nav>
 
-<section class="hero">
+<section id="home" class="hero">
 
 <img src="FDSL9164.JPG">
 
@@ -39,23 +43,35 @@
 
 <button onclick="hello()">Say Hi</button>
 
-<button onclick="toggleMusic()">Play / Pause Music 🎵</button>
+<button onclick="toggleMusic()">Play Music 🎵</button>
 
 </section>
 
-<section class="projects">
+<section id="about" class="about">
 
-<h2>My Projects</h2>
+<h2>About Me</h2>
+
+<p>
+I'm Rome from Takoradi.  
+I'm learning programming and building tech projects.  
+My goal is to become a powerful software developer.
+</p>
+
+</section>
+
+<section id="projects" class="projects">
+
+<h2>Projects</h2>
 
 <div class="project-grid">
 
 <div class="project-card">
-<h3>My First Website</h3>
-<p>The website you are currently viewing.</p>
+<h3>My Portfolio</h3>
+<p>This personal developer website.</p>
 </div>
 
 <div class="project-card">
-<h3>Future App</h3>
+<h3>Future Web App</h3>
 <p>Coming soon...</p>
 </div>
 
@@ -68,6 +84,12 @@
 
 </section>
 
+<footer>
+
+<p>© 2026 Rome | Developer Portfolio</p>
+
+</footer>
+
 <audio id="music">
 <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
 </audio>
@@ -75,8 +97,8 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>
+
 
 
 
