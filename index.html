@@ -7,119 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(-45deg,#1e3a8a,#2563eb,#0ea5e9,#38bdf8);
-background-size:400% 400%;
-animation:bg 10s ease infinite;
-color:white;
-text-align:center;
-}
-
-/* animated background */
-
-@keyframes bg{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* navbar */
-
-nav{
-padding:15px;
-background:rgba(0,0,0,0.2);
-backdrop-filter:blur(10px);
-}
-
-nav a{
-margin:0 20px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* container */
-
-.container{
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:90vh;
-}
-
-/* glass card */
-
-.card{
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(10px);
-padding:40px;
-border-radius:20px;
-width:320px;
-box-shadow:0 8px 30px rgba(0,0,0,0.3);
-animation:float 4s ease-in-out infinite;
-}
-
-/* floating animation */
-
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
-}
-
-/* image */
-
-img{
-width:150px;
-border-radius:50%;
-border:3px solid white;
-margin-bottom:20px;
-}
-
-/* buttons */
-
-button{
-padding:12px 20px;
-border:none;
-border-radius:6px;
-background:#22c55e;
-color:white;
-cursor:pointer;
-margin:5px;
-}
-
-button:hover{
-transform:scale(1.1);
-}
-
-/* social */
-
-.social a{
-display:inline-block;
-margin:5px;
-padding:10px 15px;
-background:white;
-color:black;
-border-radius:5px;
-text-decoration:none;
-font-size:14px;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
+<div id="particles"></div>
+
 <nav>
 
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+
+<button onclick="toggleMode()">🌙</button>
 
 </nav>
 
@@ -129,23 +31,15 @@ font-size:14px;
 
 <img src="FDSL9164.JPG">
 
-<h2>Rome</h2>
+<h1>Rome</h1>
+
+<h2 id="typing"></h2>
 
 <p>Future Software Developer from Takoradi 🇬🇭</p>
-
-<p>Learning web development and building tech projects.</p>
 
 <button onclick="hello()">Say Hi</button>
 
 <button onclick="toggleMusic()">Play / Pause Music 🎵</button>
-
-<div class="social">
-
-<a href="#">Instagram</a>
-<a href="#">WhatsApp</a>
-<a href="#">GitHub</a>
-
-</div>
 
 </div>
 
@@ -157,28 +51,9 @@ font-size:14px;
 
 </audio>
 
-<script>
-
-function hello(){
-alert("Welcome to Rome's website 🚀");
-}
-
-let music=document.getElementById("music");
-
-function toggleMusic(){
-
-if(music.paused){
-music.play();
-}else{
-music.pause();
-}
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
-
 </html>
 
 
