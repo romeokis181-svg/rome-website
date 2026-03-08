@@ -8,14 +8,14 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:monospace;
+background:black;
 color:#00ff9d;
 text-align:center;
-background:black;
 overflow:hidden;
 }
 
-/* matrix canvas */
+/* canvas background */
 
 canvas{
 position:fixed;
@@ -24,10 +24,9 @@ left:0;
 z-index:-1;
 }
 
-/* navigation */
+/* navbar */
 
 nav{
-background:black;
 padding:15px;
 border-bottom:1px solid #00ff9d;
 }
@@ -56,13 +55,12 @@ section{
 padding:40px;
 }
 
-/* profile image */
+/* image */
 
 img{
 width:200px;
 border-radius:50%;
 border:3px solid #00ff9d;
-margin-top:20px;
 box-shadow:0 0 20px #00ff9d;
 }
 
@@ -83,17 +81,31 @@ background:white;
 color:black;
 }
 
-/* contact buttons */
+/* chatbot */
 
-.social a{
-display:inline-block;
-margin:10px;
-padding:10px 20px;
-background:#00ff9d;
-color:black;
-border-radius:5px;
-text-decoration:none;
-font-weight:bold;
+#chatbox{
+position:fixed;
+bottom:20px;
+right:20px;
+width:250px;
+background:black;
+border:1px solid #00ff9d;
+padding:10px;
+}
+
+#messages{
+height:120px;
+overflow-y:auto;
+font-size:12px;
+margin-bottom:5px;
+}
+
+input{
+width:100%;
+padding:5px;
+background:black;
+border:1px solid #00ff9d;
+color:#00ff9d;
 }
 
 </style>
@@ -112,9 +124,11 @@ font-weight:bold;
 
 <header>
 
-<h1>Rome | Future Developer</h1>
+<h1>Rome | Future Hacker Developer</h1>
 
 <p id="typing"></p>
+
+<button onclick="playMusic()">Play Music</button>
 
 </header>
 
@@ -122,7 +136,7 @@ font-weight:bold;
 
 <h2>About Me</h2>
 
-<p>My name is Rome. I'm from Takoradi and I'm learning programming and web development.</p>
+<p>My name is Rome. I'm from Takoradi and I'm learning web development.</p>
 
 <img src="FDSL9164.JPG">
 
@@ -130,33 +144,31 @@ font-weight:bold;
 
 <section>
 
-<h2>My Mission</h2>
+<h2>Contact Me</h2>
 
-<p>I want to become a powerful software developer and build amazing tech projects.</p>
-
-<button>Follow My Journey</button>
+<a href="https://wa.me/233XXXXXXXXX">
+<button>WhatsApp Me</button>
+</a>
 
 </section>
 
-<section>
+<div id="chatbox">
 
-<h2>Contact Me</h2>
+<div id="messages"></div>
 
-<div class="social">
-
-<a href="#">Instagram</a>
-
-<a href="#">WhatsApp</a>
+<input type="text" id="userInput" placeholder="Ask Rome's AI..." onkeydown="talk(event)">
 
 </div>
 
-</section>
+<audio id="music">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
 
 <script>
 
-/* typing effect */
+/* typing text */
 
-const text = "Coding the future... Building my tech empire 🚀";
+const text = "Building the future with code...";
 let i = 0;
 
 function typing(){
@@ -169,7 +181,41 @@ setTimeout(typing,70);
 
 typing();
 
-/* matrix effect */
+/* music */
+
+function playMusic(){
+document.getElementById("music").play();
+}
+
+/* chatbot */
+
+function talk(e){
+
+if(e.key === "Enter"){
+
+let input = document.getElementById("userInput").value;
+
+let messages = document.getElementById("messages");
+
+messages.innerHTML += "<div>> " + input + "</div>";
+
+let reply = "I'm Rome's AI. Rome is learning coding.";
+
+if(input.toLowerCase().includes("hello"))
+reply = "Hello 👋 welcome to Rome's website.";
+
+if(input.toLowerCase().includes("who are you"))
+reply = "I'm Rome's website AI assistant.";
+
+messages.innerHTML += "<div>" + reply + "</div>";
+
+document.getElementById("userInput").value="";
+
+}
+
+}
+
+/* matrix background */
 
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
@@ -216,6 +262,7 @@ setInterval(draw,35);
 </body>
 
 </html>
+
 
 
 
