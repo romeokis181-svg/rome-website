@@ -9,11 +9,13 @@
 
 <link rel="stylesheet" href="style.css">
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
 </head>
 
 <body>
 
-<div id="particles"></div>
+<div id="particles-js"></div>
 
 <nav>
 
@@ -25,9 +27,7 @@
 
 </nav>
 
-<div class="container">
-
-<div class="card">
+<section class="hero">
 
 <img src="FDSL9164.JPG">
 
@@ -41,20 +41,43 @@
 
 <button onclick="toggleMusic()">Play / Pause Music 🎵</button>
 
+</section>
+
+<section class="projects">
+
+<h2>My Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+<h3>My First Website</h3>
+<p>The website you are currently viewing.</p>
+</div>
+
+<div class="project-card">
+<h3>Future App</h3>
+<p>Coming soon...</p>
+</div>
+
+<div class="project-card">
+<h3>AI Project</h3>
+<p>Coming soon...</p>
 </div>
 
 </div>
+
+</section>
 
 <audio id="music">
-
 <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
-
 </audio>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
+
 
 
 
